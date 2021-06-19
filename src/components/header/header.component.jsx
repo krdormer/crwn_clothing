@@ -1,11 +1,15 @@
 import React from 'react';
+// Routing component for linking to other routes, modified a tag 
 import { Link } from 'react-router-dom';
+// Redux component for connecting to redux store / state
 import { connect } from 'react-redux';
-
+// Authentication method from firebase, used to sign user out here 
 import { auth } from '../../firebase/firebase.utils';
-
+// SVG import as React Component, name it Logo
 import { ReactComponent as Logo } from '../../assets/crown.svg';
-
+// Other components
+import CartIcon from '../cart-icon/cart-icon.component';
+// SASS Styles
 import './header.styles.scss';
 
 const Header = ({ currentUser }) => (
@@ -29,6 +33,7 @@ const Header = ({ currentUser }) => (
           SIGN IN
         </Link>
       )}
+      <CartIcon />
     </div>
   </div>
 );
