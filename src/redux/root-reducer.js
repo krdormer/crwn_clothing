@@ -6,6 +6,7 @@ import storage from 'redux-persist/lib/storage';
 // Reducer slices to combine 
 import userReducer from "./user/user.reducer";
 import cartReducer from "./cart/cart.reducer";
+import directoryReducer from "./directory/directory.reducer";
 
 // Configuration for persistence 
 const persistConfig = {
@@ -22,7 +23,8 @@ const rootReducer = combineReducers({
     // Handled by Firebase session, so no need for local storage as well 
     user: userReducer,
     // Stored in whitelist
-    cart: cartReducer
+    cart: cartReducer,
+    directory: directoryReducer
 });
 
 // Persistence reducer obj 
