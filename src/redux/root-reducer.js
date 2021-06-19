@@ -7,6 +7,7 @@ import storage from 'redux-persist/lib/storage';
 import userReducer from "./user/user.reducer";
 import cartReducer from "./cart/cart.reducer";
 import directoryReducer from "./directory/directory.reducer";
+import shopReducer from "./shop/shop.reducer";
 
 // Configuration for persistence 
 const persistConfig = {
@@ -24,7 +25,8 @@ const rootReducer = combineReducers({
     user: userReducer,
     // Stored in whitelist
     cart: cartReducer,
-    directory: directoryReducer
+    directory: directoryReducer,
+    shop: shopReducer
 });
 
 // Persistence reducer obj 
