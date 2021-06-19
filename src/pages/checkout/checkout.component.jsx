@@ -1,6 +1,8 @@
 import React from 'react';
 // SASS Styles
 import './checkout.styles.scss';
+// Components
+import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 // Redux Components
 import { connect } from 'react-redux';
 // Redux Selector Methods 
@@ -27,7 +29,9 @@ const CheckoutPage = ({ cartItems, total }) => (
             </div>
         </div>
         {
-            cartItems.map(cartItem => cartItem.name)
+            cartItems.map(cartItem => (
+                <CheckoutItem key={cartItem.id} cartItem={cartItem} />
+            ))
         }
         <div className="total">
             <span>TOTAL: ${total}</span>
